@@ -66,7 +66,7 @@ public class ExchangeService {
         for (Quote quote : quoteSet) {
             exchange.getStreamingMarketDataService().getTicker(
                     new CurrencyPair(quote.getExchange())).subscribe(ticker -> {
-                        if(quote.getDepends()!=null){
+                        if(quote.getDepends()==null){
                             LOG.info("TICKER: {}", ticker);
                             LOG.info(String.valueOf(ticker.getAsk()));
                             LOG.info(String.valueOf(ticker.getBid()));
