@@ -1,0 +1,2 @@
+# cryptoharvester
+ Exchange Rate Generator
