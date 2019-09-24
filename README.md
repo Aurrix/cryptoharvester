@@ -52,9 +52,19 @@ Quote object contains following fields:
 
 ### Database table ovveride
 
-
+Application drops and recreates QUOTES table in provided database each time started.
 
 ### Synthetic generation
+
+If quote has an optional *depends* list, considering correct formating quote would be generated artificially. The *depends* list should contain only two availible (means natural and declared) quotes. E.g.:
+
+```
+      depends:
+        - BTC/USDT
+        - ETH/USDT
+```
+
+Synthetic quote will generates rates in the following way Quote 1/Quote 2. Generation will happen each *synth_flush_period_ms* milliseconds.
 
 ### Testing
 
